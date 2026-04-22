@@ -24,7 +24,7 @@ const events = [
     {
         title: 'React & Node.js Developer Retreat',
         description: 'Join us for a 3-day deep dive into modern full-stack web development. Perfect for developers looking to take their skills to the next level.',
-        date: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000), // 10 days from now
+        date: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000), 
         location: 'Silicon Valley Innovation Center, CA',
         category: 'Technology',
         totalSeats: 200,
@@ -34,7 +34,7 @@ const events = [
     {
         title: 'Neon Nights EDM Festival',
         description: 'Experience an unforgettable night of EDM, techno, and dazzling light shows with top DJs from around the globe.',
-        date: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000), // 20 days from now
+        date: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000), 
         location: 'Grand Arena, New York',
         category: 'Music',
         totalSeats: 500,
@@ -44,7 +44,7 @@ const events = [
     {
         title: 'Global Leaders Business Summit',
         description: 'A premium gathering of CEOs, founders, and investors discussing the future of global commerce and AI integration.',
-        date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000), // 15 days from now
+        date: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000), 
         location: 'The Ritz-Carlton, London',
         category: 'Business',
         totalSeats: 150,
@@ -147,7 +147,7 @@ const seedDatabase = async () => {
                     amount: event.ticketPrice
                 });
 
-                // Deduct available seats specifically for confirmed tickets!
+                
                 if (status === 'confirmed') {
                     event.availableSeats -= 1;
                     await event.save();

@@ -23,7 +23,7 @@ exports.register = async (req, res) => {
             name,
             email,
             password: hashedPassword,
-            role: 'user', // Hardcoded to prevent frontend passing role
+            role: 'user',
             isVerified: false
         });
 
@@ -79,7 +79,7 @@ exports.verifyOTP = async (req, res) => {
         }
 
         const user = await User.findOneAndUpdate({ email }, { isVerified: true }, { new: true });
-        await OTP.deleteOne({ _id: validOTP._id }); // Delete OTP after usage
+        await OTP.deleteOne({ _id: validOTP._id }); 
 
         res.json({
             _id: user.id,
